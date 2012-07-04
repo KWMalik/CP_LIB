@@ -11,7 +11,39 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120620003628) do
+ActiveRecord::Schema.define(:version => 20120702123800) do
+
+  create_table "books", :force => true do |t|
+    t.string   "name"
+    t.string   "sn"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
+  add_index "books", ["name"], :name => "index_books_on_name"
+  add_index "books", ["sn"], :name => "index_books_on_sn", :unique => true
+
+  create_table "borrowing_records", :force => true do |t|
+    t.integer  "reader_id"
+    t.integer  "book_id"
+    t.boolean  "current",    :default => true
+    t.datetime "created_at",                   :null => false
+    t.datetime "updated_at",                   :null => false
+  end
+
+  add_index "borrowing_records", ["book_id"], :name => "index_borrowing_records_on_book_id"
+  add_index "borrowing_records", ["current"], :name => "index_borrowing_records_on_current"
+  add_index "borrowing_records", ["reader_id"], :name => "index_borrowing_records_on_reader_id"
+
+  create_table "readers", :force => true do |t|
+    t.string   "name"
+    t.string   "employee_id"
+    t.datetime "created_at",  :null => false
+    t.datetime "updated_at",  :null => false
+  end
+
+  add_index "readers", ["employee_id"], :name => "index_readers_on_employee_id", :unique => true
+  add_index "readers", ["name"], :name => "index_readers_on_name"
 
   create_table "users", :force => true do |t|
     t.string   "name"

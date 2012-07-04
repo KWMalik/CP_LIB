@@ -1,0 +1,6 @@
+<% if @borrowing_records.any? %>
+    <ol class="records">
+      <%= render @borrowing_records %>
+    </ol>
+    <%= will_paginate @borrowing_records %>
+<% end %>

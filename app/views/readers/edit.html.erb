@@ -1,0 +1,19 @@
+<% provide(:title, "Edit reader") %>
+<h1>Update reader profile</h1>
+
+<div class="row">
+  <div class="span6 offset3">
+    <%= form_for(@reader) do |f| %>
+        <%= render 'shared/error_messages', object: f.object %>
+
+        <%= f.label :employee_id, "Employee ID" %>
+        <%= f.text_field :employee_id %>
+
+        <%= f.label :name %>
+        <%= f.text_field :name %>
+
+        <%= f.submit "Save changes", class: "btn btn-large btn-primary" %>
+    <% end %>
+
+  </div>
+</div>

@@ -1,0 +1,4 @@
+<li>
+  <%= link_to reader.name, reader %>
+  <p>Borrowed <%= reader.borrowing_records.find_all_by_current(true).size %> books</p>
+</li>

@@ -1,0 +1,10 @@
+<%= form_tag("/borrowing_records", method: "post") do %>
+
+    <%= label_tag(:sn, "Book SN:") %>
+    <%= text_field_tag(:sn) %>
+
+    <%= label_tag(:employee_id, "Employee ID:") %>
+    <%= text_field_tag(:employee_id) %>
+
+    <%= submit_tag "Borrow", class: "btn btn-large btn-primary" %>
+<% end %>

@@ -1,0 +1,18 @@
+<% provide(:title, @book.name) %>
+
+<div class="row">
+  <aside class="span4">
+    <section>
+      <h1>
+        <%= @book.name %>
+      </h1>
+      <p><%= @book.sn %></p>
+      <%= link_to "edit", edit_book_path(@book) %> |
+      <%= link_to "delete", @book, method: :delete,
+                  data: {confirm: "You sure?"} %>
+    </section>
+  </aside>
+  <div class="span8">
+    Borrowing Record will be Here...
+  </div>
+</div>

@@ -1,6 +1,9 @@
 CrownePlazaLib::Application.routes.draw do
 
   resources :sessions, only: [:new, :create, :destroy]
+  resources :readers
+  resources :books
+  resources :borrowing_records, only: [:create, :update]
 
   root to: 'static_pages#home'
   match '/help', to: 'static_pages#help'

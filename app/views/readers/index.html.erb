@@ -1,0 +1,13 @@
+<% provide(:title, 'All readers') %>
+<h1>All readers</h1>
+
+<%= link_to "Register New Reader", new_reader_path,
+            class: "btn btn-large btn-primary" %>
+
+<%= will_paginate %>
+
+<ul class="readers">
+  <%= render @readers %>
+</ul>
+
+<%= will_paginate %>

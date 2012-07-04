@@ -2,19 +2,21 @@
     <div class="row">
       <aside class="span4">
         <section>
-          <h3>Some Useful Info will be Here!</h3>
+          <%= render 'shared/borrow_form' %>
         </section>
       </aside>
       <div class="span8">
-        <h3>Borrow Info will be Here!</h3>
+        <section>
+          <%= render 'shared/current_record' %>
+        </section>
       </div>
     </div>
 <% else %>
     <div class="center hero-unit">
-      <h1>Welcome to</br>Crowne Plaza Lib</h1>
+      <h1>Welcome to</br>Crowne Plaza Library</h1>
 
       <h2>
-        Please Sign In
+        Please <%= link_to "Sign In", signin_path %>
       </h2>
 
     </div>
