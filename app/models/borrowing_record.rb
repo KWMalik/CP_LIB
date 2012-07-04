@@ -7,6 +7,8 @@ class BorrowingRecord < ActiveRecord::Base
   belongs_to :book
   belongs_to :reader
 
+  default_scope order: 'borrowing_records.created_at ASC'
+
   private
 
   def self.from_current_not_returned
