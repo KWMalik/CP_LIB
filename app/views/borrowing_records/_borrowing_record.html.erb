@@ -1,11 +1,15 @@
-<li id="<%= borrowing_record.id %>">
-  <span class="user">
-    <%= link_to borrowing_record.reader.name, borrowing_record.reader %>
-  </span>
-  <span class="content"><%= borrowing_record.book.name %></span>
-  <span class="timestamp">
-    Borrowed <%= time_ago_in_words(borrowing_record.created_at) %> ago.
-  </span>
-  <%= link_to "Return book", borrowing_record, method: :put,
-              data: {confirm: "You sure?"}, class: "btn btn-danger" %>
-</li>
+<tr id="<%= borrowing_record.id %>">
+  <td><%= link_to borrowing_record.book.name, borrowing_record.book %></td>
+  <td><%= link_to borrowing_record.reader.name, borrowing_record.reader %></td>
+  <% if borrowing_record.created_at.time.months_since(2).past? %>
+      <td class="borrowed">
+        <%= time_ago_in_words(borrowing_record.created_at) %> ago
+      </td>
+  <% else %>
+      <td>
+        <%= time_ago_in_words(borrowing_record.created_at) %> ago
+      </td>
+  <% end %>
+  <td><%= link_to "Return", borrowing_record, method: :put,
+                  data: {confirm: "You sure?"}, class: "btn btn-danger" %></td>
+</tr>

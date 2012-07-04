@@ -1,5 +1,5 @@
 class BorrowingRecord < ActiveRecord::Base
-  attr_accessible :current, :reader_id
+  attr_accessible :current, :reader_id, :book_id
 
   validates :book_id, presence: true
   validates :reader_id, presence: true

@@ -1,6 +1,15 @@
 <% if @borrowing_records.any? %>
-    <ol class="records">
+    <%= will_paginate @borrowing_records %>
+
+    <table class="table-bordered table-striped">
+      <tr>
+        <th class="span2">Book</th>
+        <th class="span3">Reader</th>
+        <th class="span3">Status</th>
+        <th class="span1">Return</th>
+      </tr>
       <%= render @borrowing_records %>
-    </ol>
+    </table>
+
     <%= will_paginate @borrowing_records %>
 <% end %>
