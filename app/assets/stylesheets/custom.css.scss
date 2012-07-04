@@ -181,9 +181,7 @@ aside {
     border-top: 1px solid #e8e8e8;
   }
 }
-.content {
-  display: block;
-}
+
 .timestamp {
   color: $grayLight;
 }
@@ -222,28 +220,18 @@ input, textarea, select, .uneditable-input {
   @extend .error;
 }
 
-.readers {
-  list-style: none;
-  margin: 0;
-  li {
-    overflow: auto;
-    padding: 10px 0;
-    border-top: 1px solid $grayLighter;
-    &:last-child {
-      border-bottom: 1px solid $grayLighter;
-    }
-  }
+td,th {
+  font-size: 1.3em;
+  padding: 10px;
 }
 
-.books {
-  list-style: none;
-  margin: 0;
-  li {
-    overflow: auto;
-    padding: 10px 0;
-    border-top: 1px solid $grayLighter;
-    &:last-child {
-      border-bottom: 1px solid $grayLighter;
-    }
-  }
+/* book status */
+
+.on_shelf {
+  color: green;
 }
+
+.borrowed {
+  color: red;
+}
+

@@ -6,8 +6,12 @@
 
 <%= will_paginate %>
 
-<ul class="readers">
+<table class="table-bordered table-striped">
+  <tr>
+    <th class="span6">Reader</th>
+    <th class="span6">Status</th>
+  </tr>
   <%= render @readers %>
-</ul>
+</table>
 
 <%= will_paginate %>

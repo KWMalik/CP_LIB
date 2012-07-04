@@ -1,8 +1,8 @@
-<li>
-  <%= link_to book.name, book %>
+<tr>
+  <td><%= link_to book.name, book %></td>
   <% if book.borrowing_records.find_by_current(true).nil? %>
-      <p>On Shelf</p>
+      <td class="on_shelf">On Shelf</td>
   <% else %>
-      <p>Borrowed</p>
+      <td class="borrowed">Borrowed</td>
   <% end %>
-</li>
+</tr>
