@@ -7,11 +7,16 @@
 <%= will_paginate %>
 
 <table class="table-bordered table-striped">
+  <thead>
   <tr>
-    <th class="span6">Book</th>
-    <th class="span6">Status</th>
+    <th class="span4">Book</th>
+    <th class="span4">SN</th>
+    <th class="span4">Status</th>
   </tr>
+  </thead>
+  <tbody>
   <%= render @books %>
+  </tbody>
 </table>
 
 <%= will_paginate %>

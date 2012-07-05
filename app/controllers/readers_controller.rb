@@ -6,9 +6,15 @@ class ReadersController < ApplicationController
   end
 
   def destroy
-    Reader.find(params[:id]).destroy
-    flash[:success] = "Reader unregistered!"
-    redirect_to readers_path
+    reader=Reader.find(params[:id])
+    if reader.borrowing_records.find_by_current(true).nil?
+      reader.destroy
+      flash[:success] = "Reader unregistered!"
+      redirect_to readers_path
+    else
+      flash[:error] = "Reader \"#{reader.name}\" still borrows some books, return it first!"
+      redirect_to root_path
+    end
   end
 
   def show

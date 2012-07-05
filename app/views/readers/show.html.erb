@@ -6,10 +6,14 @@
       <h1>
         <%= @reader.name %>
       </h1>
+
       <p><%= @reader.employee_id %></p>
-      <%= link_to "edit", edit_reader_path(@reader) %> |
-      <%= link_to "delete", @reader, method: :delete,
-                  data: {confirm: "You sure?"} %>
+
+      <div class="btn-group">
+        <%= link_to "edit", edit_reader_path(@reader), class: "span1 btn btn-primary" %>
+        <%= link_to "delete", @reader, method: :delete,
+                    data: {confirm: "You sure?"}, class: "span1 btn btn-danger" %>
+      </div>
     </section>
   </aside>
   <div class="span8">

@@ -1,5 +1,6 @@
 <tr>
   <td><%= link_to book.name, book %></td>
+  <td><%= book.sn %></td>
   <% if book.borrowing_records.find_by_current(true).nil? %>
       <td class="on_shelf">On Shelf</td>
   <% else %>

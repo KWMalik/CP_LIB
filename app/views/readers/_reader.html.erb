@@ -1,4 +1,5 @@
 <tr>
-  <td class="span6"><%= link_to reader.name, reader %></td>
-  <td class="span6">Borrowed <%= reader.borrowing_records.find_all_by_current(true).size %> books</td>
+  <td class="span4"><%= link_to reader.name, reader %></td>
+  <td class="span4"><%= reader.employee_id %></td>
+  <td class="span4">Borrowed <%= reader.borrowing_records.find_all_by_current(true).size %> books</td>
 </tr>

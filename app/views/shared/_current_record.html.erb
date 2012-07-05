@@ -2,13 +2,17 @@
     <%= will_paginate @borrowing_records %>
 
     <table class="table-bordered table-striped">
+      <thead>
       <tr>
         <th class="span2">Book</th>
         <th class="span3">Reader</th>
         <th class="span3">Status</th>
         <th class="span1">Return</th>
       </tr>
+      </thead>
+      <tbody>
       <%= render @borrowing_records %>
+      </tbody>
     </table>
 
     <%= will_paginate @borrowing_records %>

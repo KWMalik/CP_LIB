@@ -6,9 +6,15 @@ class BooksController < ApplicationController
   end
 
   def destroy
-    Book.find(params[:id]).destroy
-    flash[:success] = "Book deleted!"
-    redirect_to books_path
+    book=Book.find(params[:id])
+    if book.borrowing_records.find_by_current(true).nil?
+      book.destroy
+      flash[:success] = "Book deleted!"
+      redirect_to books_path
+    else
+      flash[:error] = "Book \"#{book.name}\" is not returned, please return it first!"
+      redirect_to root_path
+    end
   end
 
   def show

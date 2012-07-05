@@ -6,10 +6,14 @@
       <h1>
         <%= @book.name %>
       </h1>
+
       <p><%= @book.sn %></p>
-      <%= link_to "edit", edit_book_path(@book) %> |
-      <%= link_to "delete", @book, method: :delete,
-                  data: {confirm: "You sure?"} %>
+
+      <div class="btn-group">
+        <%= link_to "edit", edit_book_path(@book), class: "span1 btn btn-primary" %>
+        <%= link_to "delete", @book, method: :delete,
+                    data: {confirm: "You sure?"}, class: "span1 btn btn-danger" %>
+      </div>
     </section>
   </aside>
   <div class="span8">
