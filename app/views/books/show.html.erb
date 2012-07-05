@@ -7,7 +7,15 @@
         <%= @book.name %>
       </h1>
 
-      <p><%= @book.sn %></p>
+      <ul>
+        <li><%= @book.sn %></li>
+
+        <li><%= @book.press %></li>
+
+        <li><%= @book.author %></li>
+
+        <li><%= "￥#{@book.price}" %></li>
+      </ul>
 
       <div class="btn-group">
         <%= link_to "edit", edit_book_path(@book), class: "span1 btn btn-primary" %>
