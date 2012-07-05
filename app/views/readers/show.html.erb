@@ -6,9 +6,13 @@
       <h1>
         <%= @reader.name %>
       </h1>
-
-      <p><%= @reader.employee_id %></p>
-
+    </section>
+    <section>
+      <ul>
+        <li><%= @reader.employee_id %></li>
+      </ul>
+    </section>
+    <section>
       <div class="btn-group">
         <%= link_to "edit", edit_reader_path(@reader), class: "span1 btn btn-primary" %>
         <%= link_to "delete", @reader, method: :delete,
